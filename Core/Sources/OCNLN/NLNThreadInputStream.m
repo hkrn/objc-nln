@@ -110,8 +110,6 @@
 
 - (void)parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName
 {
-    if (qName)
-        elementName = qName;
     isChat = NO;
 }
 
