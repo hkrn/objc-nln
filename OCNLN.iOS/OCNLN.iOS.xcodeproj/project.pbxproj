@@ -1,0 +1,417 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 45;
+	objects = {
+
+/* Begin PBXAggregateTarget section */
+		84477523126AB57500FBC6A2 /* OCNLN.framework */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = 84477527126AB57C00FBC6A2 /* Build configuration list for PBXAggregateTarget "OCNLN.framework" */;
+			buildPhases = (
+				84477522126AB57500FBC6A2 /* ShellScript */,
+			);
+			dependencies = (
+			);
+			name = OCNLN.framework;
+			productName = OCNLN.framework;
+		};
+/* End PBXAggregateTarget section */
+
+/* Begin PBXBuildFile section */
+		84AE609F126AF15900E3CD87 /* NLNAuthentication.h in Headers */ = {isa = PBXBuildFile; fileRef = 84AE6091126AF15900E3CD87 /* NLNAuthentication.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		84AE60A0126AF15900E3CD87 /* NLNCommunity.h in Headers */ = {isa = PBXBuildFile; fileRef = 84AE6092126AF15900E3CD87 /* NLNCommunity.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		84AE60A1126AF15900E3CD87 /* NLNLoader+Private.h in Headers */ = {isa = PBXBuildFile; fileRef = 84AE6093126AF15900E3CD87 /* NLNLoader+Private.h */; settings = {ATTRIBUTES = (); }; };
+		84AE60A2126AF15900E3CD87 /* NLNLoader.h in Headers */ = {isa = PBXBuildFile; fileRef = 84AE6094126AF15900E3CD87 /* NLNLoader.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		84AE60A3126AF15900E3CD87 /* NLNMessageServer.h in Headers */ = {isa = PBXBuildFile; fileRef = 84AE6095126AF15900E3CD87 /* NLNMessageServer.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		84AE60A4126AF15900E3CD87 /* NLNStream.h in Headers */ = {isa = PBXBuildFile; fileRef = 84AE6096126AF15900E3CD87 /* NLNStream.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		84AE60A5126AF15900E3CD87 /* NLNStreamLoader.h in Headers */ = {isa = PBXBuildFile; fileRef = 84AE6097126AF15900E3CD87 /* NLNStreamLoader.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		84AE60A6126AF15900E3CD87 /* NLNThreadConnection.h in Headers */ = {isa = PBXBuildFile; fileRef = 84AE6098126AF15900E3CD87 /* NLNThreadConnection.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		84AE60A7126AF15900E3CD87 /* NLNThreadInputStream.h in Headers */ = {isa = PBXBuildFile; fileRef = 84AE6099126AF15900E3CD87 /* NLNThreadInputStream.h */; };
+		84AE60A8126AF15900E3CD87 /* NLNThreadOuputStream.h in Headers */ = {isa = PBXBuildFile; fileRef = 84AE609A126AF15900E3CD87 /* NLNThreadOuputStream.h */; };
+		84AE60A9126AF15900E3CD87 /* NLNUser.h in Headers */ = {isa = PBXBuildFile; fileRef = 84AE609B126AF15900E3CD87 /* NLNUser.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		84AE60AA126AF15900E3CD87 /* NLNUserLoader.h in Headers */ = {isa = PBXBuildFile; fileRef = 84AE609C126AF15900E3CD87 /* NLNUserLoader.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		84AE60AB126AF15900E3CD87 /* NSStream+Extension.h in Headers */ = {isa = PBXBuildFile; fileRef = 84AE609D126AF15900E3CD87 /* NSStream+Extension.h */; settings = {ATTRIBUTES = (); }; };
+		84AE60AC126AF15900E3CD87 /* OCNLN.h in Headers */ = {isa = PBXBuildFile; fileRef = 84AE609E126AF15900E3CD87 /* OCNLN.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		84AE60BB126AF16300E3CD87 /* NLNAuthentication.m in Sources */ = {isa = PBXBuildFile; fileRef = 84AE60AF126AF16300E3CD87 /* NLNAuthentication.m */; };
+		84AE60BC126AF16300E3CD87 /* NLNCommunity.m in Sources */ = {isa = PBXBuildFile; fileRef = 84AE60B0126AF16300E3CD87 /* NLNCommunity.m */; };
+		84AE60BD126AF16300E3CD87 /* NLNLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = 84AE60B1126AF16300E3CD87 /* NLNLoader.m */; };
+		84AE60BE126AF16300E3CD87 /* NLNMessageServer.m in Sources */ = {isa = PBXBuildFile; fileRef = 84AE60B2126AF16300E3CD87 /* NLNMessageServer.m */; };
+		84AE60BF126AF16300E3CD87 /* NLNStream.m in Sources */ = {isa = PBXBuildFile; fileRef = 84AE60B3126AF16300E3CD87 /* NLNStream.m */; };
+		84AE60C0126AF16300E3CD87 /* NLNStreamLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = 84AE60B4126AF16300E3CD87 /* NLNStreamLoader.m */; };
+		84AE60C1126AF16300E3CD87 /* NLNThreadConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = 84AE60B5126AF16300E3CD87 /* NLNThreadConnection.m */; };
+		84AE60C2126AF16300E3CD87 /* NLNThreadInputStream.m in Sources */ = {isa = PBXBuildFile; fileRef = 84AE60B6126AF16300E3CD87 /* NLNThreadInputStream.m */; };
+		84AE60C3126AF16300E3CD87 /* NLNThreadOuputStream.m in Sources */ = {isa = PBXBuildFile; fileRef = 84AE60B7126AF16300E3CD87 /* NLNThreadOuputStream.m */; };
+		84AE60C4126AF16300E3CD87 /* NLNUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 84AE60B8126AF16300E3CD87 /* NLNUser.m */; };
+		84AE60C5126AF16300E3CD87 /* NLNUserLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = 84AE60B9126AF16300E3CD87 /* NLNUserLoader.m */; };
+		84AE60C6126AF16300E3CD87 /* NSStream+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 84AE60BA126AF16300E3CD87 /* NSStream+Extension.m */; };
+		AA747D9F0F9514B9006C5449 /* OCNLN_Prefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = AA747D9E0F9514B9006C5449 /* OCNLN_Prefix.pch */; settings = {ATTRIBUTES = (); }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		8447750D126AB34700FBC6A2 /* Framework.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Framework.plist; sourceTree = "<group>"; };
+		84AE6091126AF15900E3CD87 /* NLNAuthentication.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NLNAuthentication.h; sourceTree = "<group>"; };
+		84AE6092126AF15900E3CD87 /* NLNCommunity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NLNCommunity.h; sourceTree = "<group>"; };
+		84AE6093126AF15900E3CD87 /* NLNLoader+Private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NLNLoader+Private.h"; sourceTree = "<group>"; };
+		84AE6094126AF15900E3CD87 /* NLNLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NLNLoader.h; sourceTree = "<group>"; };
+		84AE6095126AF15900E3CD87 /* NLNMessageServer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NLNMessageServer.h; sourceTree = "<group>"; };
+		84AE6096126AF15900E3CD87 /* NLNStream.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NLNStream.h; sourceTree = "<group>"; };
+		84AE6097126AF15900E3CD87 /* NLNStreamLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NLNStreamLoader.h; sourceTree = "<group>"; };
+		84AE6098126AF15900E3CD87 /* NLNThreadConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NLNThreadConnection.h; sourceTree = "<group>"; };
+		84AE6099126AF15900E3CD87 /* NLNThreadInputStream.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NLNThreadInputStream.h; sourceTree = "<group>"; };
+		84AE609A126AF15900E3CD87 /* NLNThreadOuputStream.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NLNThreadOuputStream.h; sourceTree = "<group>"; };
+		84AE609B126AF15900E3CD87 /* NLNUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NLNUser.h; sourceTree = "<group>"; };
+		84AE609C126AF15900E3CD87 /* NLNUserLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NLNUserLoader.h; sourceTree = "<group>"; };
+		84AE609D126AF15900E3CD87 /* NSStream+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSStream+Extension.h"; sourceTree = "<group>"; };
+		84AE609E126AF15900E3CD87 /* OCNLN.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCNLN.h; sourceTree = "<group>"; };
+		84AE60AF126AF16300E3CD87 /* NLNAuthentication.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NLNAuthentication.m; sourceTree = "<group>"; };
+		84AE60B0126AF16300E3CD87 /* NLNCommunity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NLNCommunity.m; sourceTree = "<group>"; };
+		84AE60B1126AF16300E3CD87 /* NLNLoader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NLNLoader.m; sourceTree = "<group>"; };
+		84AE60B2126AF16300E3CD87 /* NLNMessageServer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NLNMessageServer.m; sourceTree = "<group>"; };
+		84AE60B3126AF16300E3CD87 /* NLNStream.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NLNStream.m; sourceTree = "<group>"; };
+		84AE60B4126AF16300E3CD87 /* NLNStreamLoader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NLNStreamLoader.m; sourceTree = "<group>"; };
+		84AE60B5126AF16300E3CD87 /* NLNThreadConnection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NLNThreadConnection.m; sourceTree = "<group>"; };
+		84AE60B6126AF16300E3CD87 /* NLNThreadInputStream.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NLNThreadInputStream.m; sourceTree = "<group>"; };
+		84AE60B7126AF16300E3CD87 /* NLNThreadOuputStream.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NLNThreadOuputStream.m; sourceTree = "<group>"; };
+		84AE60B8126AF16300E3CD87 /* NLNUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NLNUser.m; sourceTree = "<group>"; };
+		84AE60B9126AF16300E3CD87 /* NLNUserLoader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NLNUserLoader.m; sourceTree = "<group>"; };
+		84AE60BA126AF16300E3CD87 /* NSStream+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSStream+Extension.m"; sourceTree = "<group>"; };
+		AA747D9E0F9514B9006C5449 /* OCNLN_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCNLN_Prefix.pch; sourceTree = "<group>"; };
+		D2AAC07E0554694100DB518D /* libOCNLN.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libOCNLN.a; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		D2AAC07C0554694100DB518D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		034768DFFF38A50411DB9C8B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D2AAC07E0554694100DB518D /* libOCNLN.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		0867D691FE84028FC02AAC07 /* OCNLN.iOS */ = {
+			isa = PBXGroup;
+			children = (
+				84AE608F126AF15900E3CD87 /* Include */,
+				84AE60AD126AF16300E3CD87 /* Sources */,
+				8447750A126AB2CD00FBC6A2 /* Resources */,
+				32C88DFF0371C24200C91783 /* Other Sources */,
+				0867D69AFE84028FC02AAC07 /* Frameworks */,
+			);
+			name = OCNLN.iOS;
+			sourceTree = "<group>";
+		};
+		0867D69AFE84028FC02AAC07 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				034768DFFF38A50411DB9C8B /* Products */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		32C88DFF0371C24200C91783 /* Other Sources */ = {
+			isa = PBXGroup;
+			children = (
+				AA747D9E0F9514B9006C5449 /* OCNLN_Prefix.pch */,
+			);
+			name = "Other Sources";
+			sourceTree = "<group>";
+		};
+		8447750A126AB2CD00FBC6A2 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				8447750D126AB34700FBC6A2 /* Framework.plist */,
+			);
+			name = Resources;
+			path = ../Core/Resources;
+			sourceTree = SOURCE_ROOT;
+		};
+		84AE608F126AF15900E3CD87 /* Include */ = {
+			isa = PBXGroup;
+			children = (
+				84AE6090126AF15900E3CD87 /* OCNLN */,
+			);
+			name = Include;
+			path = ../Core/Include;
+			sourceTree = SOURCE_ROOT;
+		};
+		84AE6090126AF15900E3CD87 /* OCNLN */ = {
+			isa = PBXGroup;
+			children = (
+				84AE6091126AF15900E3CD87 /* NLNAuthentication.h */,
+				84AE6092126AF15900E3CD87 /* NLNCommunity.h */,
+				84AE6093126AF15900E3CD87 /* NLNLoader+Private.h */,
+				84AE6094126AF15900E3CD87 /* NLNLoader.h */,
+				84AE6095126AF15900E3CD87 /* NLNMessageServer.h */,
+				84AE6096126AF15900E3CD87 /* NLNStream.h */,
+				84AE6097126AF15900E3CD87 /* NLNStreamLoader.h */,
+				84AE6098126AF15900E3CD87 /* NLNThreadConnection.h */,
+				84AE6099126AF15900E3CD87 /* NLNThreadInputStream.h */,
+				84AE609A126AF15900E3CD87 /* NLNThreadOuputStream.h */,
+				84AE609B126AF15900E3CD87 /* NLNUser.h */,
+				84AE609C126AF15900E3CD87 /* NLNUserLoader.h */,
+				84AE609D126AF15900E3CD87 /* NSStream+Extension.h */,
+				84AE609E126AF15900E3CD87 /* OCNLN.h */,
+			);
+			path = OCNLN;
+			sourceTree = "<group>";
+		};
+		84AE60AD126AF16300E3CD87 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				84AE60AE126AF16300E3CD87 /* OCNLN */,
+			);
+			name = Sources;
+			path = ../Core/Sources;
+			sourceTree = SOURCE_ROOT;
+		};
+		84AE60AE126AF16300E3CD87 /* OCNLN */ = {
+			isa = PBXGroup;
+			children = (
+				84AE60AF126AF16300E3CD87 /* NLNAuthentication.m */,
+				84AE60B0126AF16300E3CD87 /* NLNCommunity.m */,
+				84AE60B1126AF16300E3CD87 /* NLNLoader.m */,
+				84AE60B2126AF16300E3CD87 /* NLNMessageServer.m */,
+				84AE60B3126AF16300E3CD87 /* NLNStream.m */,
+				84AE60B4126AF16300E3CD87 /* NLNStreamLoader.m */,
+				84AE60B5126AF16300E3CD87 /* NLNThreadConnection.m */,
+				84AE60B6126AF16300E3CD87 /* NLNThreadInputStream.m */,
+				84AE60B7126AF16300E3CD87 /* NLNThreadOuputStream.m */,
+				84AE60B8126AF16300E3CD87 /* NLNUser.m */,
+				84AE60B9126AF16300E3CD87 /* NLNUserLoader.m */,
+				84AE60BA126AF16300E3CD87 /* NSStream+Extension.m */,
+			);
+			path = OCNLN;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		D2AAC07A0554694100DB518D /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AA747D9F0F9514B9006C5449 /* OCNLN_Prefix.pch in Headers */,
+				84AE609F126AF15900E3CD87 /* NLNAuthentication.h in Headers */,
+				84AE60A0126AF15900E3CD87 /* NLNCommunity.h in Headers */,
+				84AE60A1126AF15900E3CD87 /* NLNLoader+Private.h in Headers */,
+				84AE60A2126AF15900E3CD87 /* NLNLoader.h in Headers */,
+				84AE60A3126AF15900E3CD87 /* NLNMessageServer.h in Headers */,
+				84AE60A4126AF15900E3CD87 /* NLNStream.h in Headers */,
+				84AE60A5126AF15900E3CD87 /* NLNStreamLoader.h in Headers */,
+				84AE60A6126AF15900E3CD87 /* NLNThreadConnection.h in Headers */,
+				84AE60A7126AF15900E3CD87 /* NLNThreadInputStream.h in Headers */,
+				84AE60A8126AF15900E3CD87 /* NLNThreadOuputStream.h in Headers */,
+				84AE60A9126AF15900E3CD87 /* NLNUser.h in Headers */,
+				84AE60AA126AF15900E3CD87 /* NLNUserLoader.h in Headers */,
+				84AE60AB126AF15900E3CD87 /* NSStream+Extension.h in Headers */,
+				84AE60AC126AF15900E3CD87 /* OCNLN.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		D2AAC07D0554694100DB518D /* OCNLN */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1DEB921E08733DC00010E9CD /* Build configuration list for PBXNativeTarget "OCNLN" */;
+			buildPhases = (
+				D2AAC07A0554694100DB518D /* Headers */,
+				D2AAC07B0554694100DB518D /* Sources */,
+				D2AAC07C0554694100DB518D /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = OCNLN;
+			productName = OCNLN.iOS;
+			productReference = D2AAC07E0554694100DB518D /* libOCNLN.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		0867D690FE84028FC02AAC07 /* Project object */ = {
+			isa = PBXProject;
+			buildConfigurationList = 1DEB922208733DC00010E9CD /* Build configuration list for PBXProject "OCNLN.iOS" */;
+			compatibilityVersion = "Xcode 3.1";
+			hasScannedForEncodings = 1;
+			mainGroup = 0867D691FE84028FC02AAC07 /* OCNLN.iOS */;
+			productRefGroup = 034768DFFF38A50411DB9C8B /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				D2AAC07D0554694100DB518D /* OCNLN */,
+				84477523126AB57500FBC6A2 /* OCNLN.framework */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		84477522126AB57500FBC6A2 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "export PATH=/Developer/usr/bin:\"$PATH\"\n\n# Define these to suit your nefarious purposes\nFRAMEWORK_NAME=OCNLN\nFRAMEWORK_VERSION=A\nFRAMEWORK_CURRENT_VERSION=1\nFRAMEWORK_COMPATIBILITY_VERSION=1\n\nxcodebuild -configuration ${BUILD_STYLE} -target ${FRAMEWORK_NAME} clean\nxcodebuild -configuration ${BUILD_STYLE} -target ${FRAMEWORK_NAME} -sdk iphonesimulator${IPHONEOS_DEPLOYMENT_TARGET}\n[ $? != 0 ] && exit 1\nxcodebuild -configuration ${BUILD_STYLE} -target ${FRAMEWORK_NAME} -sdk iphoneos${IPHONEOS_DEPLOYMENT_TARGET}\n\n# Where we'll put the build framework.\n# The script presumes we're in the project root\n# directory. Xcode builds in \"build\" by default\nFRAMEWORK_BUILD_PATH=\"build/Framework\"\n\n# Clean any existing framework that might be there\n# already\necho \"Framework: Cleaning framework...\"\n[ -d \"${FRAMEWORK_BUILD_PATH}\" ] && \\\nrm -rf \"${FRAMEWORK_BUILD_PATH}\"\n\n# This is the full name of the framework we'll\n# build\nFRAMEWORK_DIR=${FRAMEWORK_BUILD_PATH}/${FRAMEWORK_NAME}.framework\n\n# Build the canonical Framework bundle directory\n# structure\necho \"Framework: Setting up directories...\"\nmkdir -p ${FRAMEWORK_DIR}\nmkdir -p ${FRAMEWORK_DIR}/Versions\nmkdir -p ${FRAMEWORK_DIR}/Versions/${FRAMEWORK_VERSION}\nmkdir -p ${FRAMEWORK_DIR}/Versions/${FRAMEWORK_VERSION}/Resources\nmkdir -p ${FRAMEWORK_DIR}/Versions/${FRAMEWORK_VERSION}/Headers\n\necho \"Framework: Creating symlinks...\"\nln -s ${FRAMEWORK_VERSION} ${FRAMEWORK_DIR}/Versions/Current\nln -s Versions/Current/Headers ${FRAMEWORK_DIR}/Headers\nln -s Versions/Current/Resources ${FRAMEWORK_DIR}/Resources\nln -s Versions/Current/${FRAMEWORK_NAME} ${FRAMEWORK_DIR}/${FRAMEWORK_NAME}\n\n# Check that this is what your static libraries\n# are called\nFRAMEWORK_INPUT_ARM_FILES=\"build/${BUILD_STYLE}-iphoneos/lib${FRAMEWORK_NAME}.a\"\nFRAMEWORK_INPUT_I386_FILES=\"build/${BUILD_STYLE}-iphonesimulator/lib${FRAMEWORK_NAME}.a\"\n\n# The trick for creating a fully usable library is\n# to use lipo to glue the different library\n# versions together into one file. When an\n# application is linked to this library, the\n# linker will extract the appropriate platform\n# version and use that.\n# The library file is given the same name as the\n# framework with no .a extension.\necho \"Framework: Creating library...\"\nlipo \\\n-create \\\n\"${FRAMEWORK_INPUT_ARM_FILES}\" \\\n-arch i386 \"${FRAMEWORK_INPUT_I386_FILES}\" \\\n-o \"${FRAMEWORK_DIR}/Versions/Current/${FRAMEWORK_NAME}\"\n\n# Now copy the final assets over: your library\n# header files and the plist file\necho \"Framework: Copying assets into current version...\"\ncp -r ../Core/Include/${FRAMEWORK_NAME}/* ${FRAMEWORK_DIR}/Headers/\nrm -f ${FRAMEWORK_DIR}/Headers/NLNThread*Stream.h\nrm -f ${FRAMEWORK_DIR}/Headers/*+Private.h\ncp ../Core/Resources/Framework.plist ${FRAMEWORK_DIR}/Resources/Info.plist\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		D2AAC07B0554694100DB518D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				84AE60BB126AF16300E3CD87 /* NLNAuthentication.m in Sources */,
+				84AE60BC126AF16300E3CD87 /* NLNCommunity.m in Sources */,
+				84AE60BD126AF16300E3CD87 /* NLNLoader.m in Sources */,
+				84AE60BE126AF16300E3CD87 /* NLNMessageServer.m in Sources */,
+				84AE60BF126AF16300E3CD87 /* NLNStream.m in Sources */,
+				84AE60C0126AF16300E3CD87 /* NLNStreamLoader.m in Sources */,
+				84AE60C1126AF16300E3CD87 /* NLNThreadConnection.m in Sources */,
+				84AE60C2126AF16300E3CD87 /* NLNThreadInputStream.m in Sources */,
+				84AE60C3126AF16300E3CD87 /* NLNThreadOuputStream.m in Sources */,
+				84AE60C4126AF16300E3CD87 /* NLNUser.m in Sources */,
+				84AE60C5126AF16300E3CD87 /* NLNUserLoader.m in Sources */,
+				84AE60C6126AF16300E3CD87 /* NSStream+Extension.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		1DEB921F08733DC00010E9CD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				COPY_PHASE_STRIP = NO;
+				DSTROOT = /tmp/OCNLN.dst;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_FIX_AND_CONTINUE = YES;
+				GCC_MODEL_TUNING = G5;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = OCNLN_Prefix.pch;
+				INSTALL_PATH = /usr/local/lib;
+				PRODUCT_NAME = OCNLN;
+			};
+			name = Debug;
+		};
+		1DEB922008733DC00010E9CD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				DSTROOT = /tmp/OCNLN.dst;
+				GCC_MODEL_TUNING = G5;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = OCNLN_Prefix.pch;
+				INSTALL_PATH = /usr/local/lib;
+				PRODUCT_NAME = OCNLN;
+			};
+			name = Release;
+		};
+		1DEB922308733DC00010E9CD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = Include;
+				OTHER_LDFLAGS = "-ObjC";
+				PREBINDING = NO;
+				SDKROOT = iphoneos4.0;
+			};
+			name = Debug;
+		};
+		1DEB922408733DC00010E9CD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = Include;
+				OTHER_LDFLAGS = "-ObjC";
+				PREBINDING = NO;
+				SDKROOT = iphoneos4.0;
+			};
+			name = Release;
+		};
+		84477524126AB57500FBC6A2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				PRODUCT_NAME = OCNLN.framework;
+			};
+			name = Debug;
+		};
+		84477525126AB57500FBC6A2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				PRODUCT_NAME = OCNLN.framework;
+				ZERO_LINK = NO;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1DEB921E08733DC00010E9CD /* Build configuration list for PBXNativeTarget "OCNLN" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1DEB921F08733DC00010E9CD /* Debug */,
+				1DEB922008733DC00010E9CD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1DEB922208733DC00010E9CD /* Build configuration list for PBXProject "OCNLN.iOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1DEB922308733DC00010E9CD /* Debug */,
+				1DEB922408733DC00010E9CD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		84477527126AB57C00FBC6A2 /* Build configuration list for PBXAggregateTarget "OCNLN.framework" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				84477524126AB57500FBC6A2 /* Debug */,
+				84477525126AB57500FBC6A2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 0867D690FE84028FC02AAC07 /* Project object */;
+}
