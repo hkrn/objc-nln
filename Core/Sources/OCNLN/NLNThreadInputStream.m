@@ -31,7 +31,10 @@
 
 #define NLN_THREAD_INPUT_STREAM_BUFFER_SIZE 256
 
-- (id)initWithInputStream:(NSInputStream *)aStream delegate:(id)aDelegate selector:(SEL)aSelector streamFilter:(SEL)aFilter
+- (id)initWithInputStream:(NSInputStream *)aStream
+                 delegate:(id)aDelegate
+        didFinishSelector:(SEL)aSelector
+             streamFilter:(SEL)aFilter
 {
     self = [super init];
     if (self != nil) {
@@ -63,14 +66,14 @@
         case NSStreamEventHasBytesAvailable: {
             uint8_t buffer[NLN_THREAD_INPUT_STREAM_BUFFER_SIZE];
             uint8_t fragment[NLN_THREAD_INPUT_STREAM_BUFFER_SIZE];
-            int readBytes = [(NSInputStream *)stream read:buffer maxLength:sizeof(buffer)];
+            NSInteger readBytes = [(NSInputStream *)stream read:buffer maxLength:sizeof(buffer)];
             if (readBytes > 0) {
                 [byteBuffer appendBytes:buffer length:readBytes];
                 const char *s = [byteBuffer bytes];
                 char *ptr = NULL;
-                int loc = 0;
+                NSInteger loc = 0;
                 while ((ptr = memchr(s + loc, '\0', readBytes - loc)) != NULL) {
-                    int len = ptr - (s + loc);
+                    NSInteger len = ptr - (s + loc);
                     memset(fragment, 0, NLN_THREAD_INPUT_STREAM_BUFFER_SIZE);
                     [byteBuffer getBytes:fragment range:NSMakeRange(loc, len)];
                     NSData *bytes = [[NSData alloc] initWithBytes:fragment length:len];
@@ -121,7 +124,7 @@
         NSString *communityID = [streamInfo objectAtIndex:1];
         if ([[delegate performSelector:streamFilter withObject:streamID withObject:communityID] boolValue]) {
             NSString *streamName = [[NSString alloc] initWithFormat:@"lv%@", streamID];
-            [streamLoader loadWithStreamId:streamName delegate:delegate selector:selector];
+            [streamLoader loadStreamWithId:streamName delegate:delegate didFinishSelector:selector];
             [streamName release];
         }
     }

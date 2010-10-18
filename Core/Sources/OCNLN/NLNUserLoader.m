@@ -185,7 +185,7 @@ static void toggleXMLParserState(NLNUserXMLParserState *state, NSString *element
     [super dealloc];
 }
 
-- (void)loadWithDelegate:(id)aDelegate selector:(SEL)aSelector
+- (void)loadUserWithDelegate:(id)aDelegate didFinishSelector:(SEL)aSelector
 {
     [self releaseConnection];
     delegate = aDelegate;
@@ -198,7 +198,7 @@ static void toggleXMLParserState(NLNUserXMLParserState *state, NSString *element
     connection = [[NSURLConnection alloc] initWithRequest:request delegate:self];
 }
 
-- (void)loadWithTicket:(NSString *)ticket delegate:(id)aDelegate selector:(SEL)aSelector
+- (void)loadUserWithTicket:(NSString *)ticket delegate:(id)aDelegate didFinishSelector:(SEL)aSelector
 {
     NSMutableString *param = [NSMutableString stringWithFormat:@"ticket=%@", ticket];
     [self releaseConnection];

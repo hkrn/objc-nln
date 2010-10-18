@@ -36,8 +36,10 @@
     SEL selector;
 }
 
-- (id)initWithOutputStream:(NSOutputStream *)aStream threadId:(NSString *)aThreadId delegate:(id)aDelegate selector:(SEL)aSelector;
-- (void)dealloc;
+- (id)initWithOutputStream:(NSOutputStream *)aStream
+                  threadId:(NSString *)aThreadId
+                  delegate:(id)aDelegate
+         didFinishSelector:(SEL)aSelector;
 
 - (void)stream:(NSStream *)stream handleEvent:(NSStreamEvent)eventCode;
 

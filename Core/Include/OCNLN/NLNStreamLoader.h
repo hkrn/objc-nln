@@ -36,6 +36,6 @@ typedef struct NLNStreamXMLParserState NLNStreamXMLParserState;
     NLNStreamXMLParserState *state;
 }
 
-- (void)loadWithStreamId:(NSString *)streamId delegate:(id)aDelegate selector:(SEL)aSelector;
+- (void)loadStreamWithId:(NSString *)streamId delegate:(id)aDelegate didFinishSelector:(SEL)aSelector;
 
 @end

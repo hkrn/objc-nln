@@ -35,6 +35,9 @@ typedef struct NLNAuthenticationXMLParserState NLNAuthenticationXMLParserState;
     NLNAuthenticationXMLParserState *state;
 }
 
-- (void)authenticateWithEmail:(NSString *)email password:(NSString *)password delegate:(id)aDelegate didFinishSelector:(SEL)aSelector;
+- (void)authenticateWithEmail:(NSString *)email
+                     password:(NSString *)password
+                     delegate:(id)aDelegate
+            didFinishSelector:(SEL)aSelector;
 
 @end

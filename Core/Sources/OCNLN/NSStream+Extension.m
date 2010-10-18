@@ -39,7 +39,7 @@
     CFReadStreamRef readStream = NULL;
     CFWriteStreamRef writeStream = NULL;
     
-    CFStreamCreatePairWithSocketToHost(NULL, (CFStringRef) hostName,  port,
+    CFStreamCreatePairWithSocketToHost(NULL, (CFStringRef) hostName, (UInt32)port,
                                        ((inputStreamPtr  != nil) ? &readStream : NULL),
                                        ((outputStreamPtr != nil) ? &writeStream : NULL)
                                        );

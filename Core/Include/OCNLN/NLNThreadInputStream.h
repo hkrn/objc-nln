@@ -39,8 +39,10 @@
     SEL streamFilter;
 }
 
-- (id)initWithInputStream:(NSInputStream *)aStream delegate:(id)aDelegate selector:(SEL)aSelector streamFilter:(SEL)aFilter;
-- (void)dealloc;
+- (id)initWithInputStream:(NSInputStream *)aStream
+                 delegate:(id)aDelegate
+        didFinishSelector:(SEL)aSelector
+             streamFilter:(SEL)aFilter;
 
 - (void)stream:(NSStream *)stream handleEvent:(NSStreamEvent)eventCode;
 

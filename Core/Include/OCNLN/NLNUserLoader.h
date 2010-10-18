@@ -36,7 +36,7 @@ typedef struct NLNUserXMLParserState NLNUserXMLParserState;
     NLNUserXMLParserState *state;
 }
 
-- (void)loadWithDelegate:(id)aDelegate selector:(SEL)aSelector;
-- (void)loadWithTicket:(NSString *)ticket delegate:(id)aDelegate selector:(SEL)aSelector;
+- (void)loadUserWithDelegate:(id)aDelegate didFinishSelector:(SEL)aSelector;
+- (void)loadUserWithTicket:(NSString *)ticket delegate:(id)aDelegate didFinishSelector:(SEL)aSelector;
 
 @end

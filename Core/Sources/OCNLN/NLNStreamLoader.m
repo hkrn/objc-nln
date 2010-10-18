@@ -147,7 +147,7 @@ static void toggleXMLParserState(NLNStreamXMLParserState *state, NSString *eleme
     [super dealloc];
 }
 
-- (void)loadWithStreamId:(NSString *)streamId delegate:(id)aDelegate selector:(SEL)aSelector
+- (void)loadStreamWithId:(NSString *)streamId delegate:(id)aDelegate didFinishSelector:(SEL)aSelector
 {
     NLNStream *stream = [[NLNStream alloc] init];
     NSMutableString *urlString = [NSString stringWithFormat:@"http://live.nicovideo.jp/api/getstreaminfo/%@", streamId];

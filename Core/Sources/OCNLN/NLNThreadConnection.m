@@ -54,7 +54,7 @@
 
 - (void)connectMessageServer:(NLNMessageServer *)server
                     delegate:(id)delegate
-                    selector:(SEL)selector
+           didFinishSelector:(SEL)selector
                 streamFilter:(SEL)filter
 {
     NSInputStream *inputStream = nil;
@@ -62,8 +62,14 @@
     [NSStream getStreamsToHostNamed:server.address port:server.port inputStream:&inputStream outputStream:&outputStream];
     [input release];
     [output release];
-    input = [[NLNThreadInputStream alloc] initWithInputStream:inputStream delegate:delegate selector:selector streamFilter:filter];
-    output = [[NLNThreadOutputStream alloc] initWithOutputStream:outputStream threadId:server.threadId delegate:delegate selector:selector];
+    input = [[NLNThreadInputStream alloc] initWithInputStream:inputStream
+                                                     delegate:delegate
+                                            didFinishSelector:selector
+                                                 streamFilter:filter];
+    output = [[NLNThreadOutputStream alloc] initWithOutputStream:outputStream
+                                                        threadId:server.threadId
+                                                        delegate:delegate
+                                               didFinishSelector:selector];
 }
 
 @end

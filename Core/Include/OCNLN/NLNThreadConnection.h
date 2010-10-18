@@ -39,7 +39,7 @@
 
 - (void)connectMessageServer:(NLNMessageServer *)server
                     delegate:(id)delegate
-                    selector:(SEL)selector
+           didFinishSelector:(SEL)selector
                 streamFilter:(SEL)filter;
 
 @end

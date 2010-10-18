@@ -29,7 +29,10 @@
 
 @implementation NLNThreadOutputStream
 
-- (id)initWithOutputStream:(NSOutputStream *)aStream threadId:(NSString *)aThreadId delegate:(id)aDelegate selector:(SEL)aSelector
+- (id)initWithOutputStream:(NSOutputStream *)aStream
+                  threadId:(NSString *)aThreadId
+                  delegate:(id)aDelegate
+         didFinishSelector:(SEL)aSelector
 {
     self = [super init];
     if (self != nil) {
@@ -61,9 +64,9 @@
         case NSStreamEventHasSpaceAvailable: {
             if (!isWritten) {
                 char buffer[128];
-                int len = snprintf(buffer, sizeof(buffer), "<thread thread=\"%s\" version=\"20061206\" res_from=\"-1\"/>\\0", [threadId UTF8String]);
+                NSUInteger len = snprintf(buffer, sizeof(buffer), "<thread thread=\"%s\" version=\"20061206\" res_from=\"-1\"/>\\0", [threadId UTF8String]);
                 if (len >= 0) {
-                    int written = [(NSOutputStream *)stream write:(uint8_t *)buffer maxLength:(NSUInteger)len + 1];
+                    NSInteger written = [(NSOutputStream *)stream write:(const uint8_t *)buffer maxLength:len + 1];
                     if (written < 0) {
                         [delegate performSelector:selector withObject:nil withObject:[stream streamError]];
                     }
