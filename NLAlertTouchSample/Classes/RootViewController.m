@@ -28,7 +28,7 @@
     if (streams == nil)
         streams = [[NSMutableArray alloc] init];
     lastModified = [[NSDate date] timeIntervalSince1970];
-    [userLoader loadWithDelegate:self selector:@selector(user:error:)];
+    [userLoader loadUserWithDelegate:self didFinishSelector:@selector(user:error:)];
     //[authentication authenticateWithEmail:@"test@examle.com" password:@"password" delegate:self didFinishSelector:@selector(ticket:error:)];
     [self toggleNetworkActivity:YES];
     [super viewDidLoad];
@@ -143,7 +143,7 @@
     }
     else {
         NSLog(@"ticket:%@", aTicket);
-        [userLoader loadWithTicket:aTicket delegate:self selector:@selector(user:error:)];
+        [userLoader loadUserWithTicket:aTicket delegate:self didFinishSelector:@selector(user:error:)];
     }
 }
 
@@ -172,7 +172,7 @@
         user = [theUser retain];
         [threadConnection connectMessageServer:user.server
                                       delegate:self
-                                      selector:@selector(stream:error:)
+                             didFinishSelector:@selector(stream:error:)
                                   streamFilter:@selector(filterStream:community:)];
         [self toggleNetworkActivity:NO];
     }
