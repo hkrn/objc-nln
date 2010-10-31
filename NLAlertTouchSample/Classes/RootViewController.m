@@ -123,7 +123,7 @@
         [app openURL:streamURL];
     }
     else {
-        NSURL *infoURL = [[NSURL alloc] initWithString:@"http://live.nicovideo.jp/iphone/"];
+        NSURL *infoURL = [[NSURL alloc] initWithString:@"http://itunes.apple.com/app/id366263785"];
         [app openURL:infoURL];
         [infoURL release];
     }
