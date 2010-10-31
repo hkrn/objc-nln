@@ -203,13 +203,13 @@
     }
     else if (theStream != nil) {
         /*
-        NSLog(@"id:%@ title:%@ provider:%@ default:%@ name:%@ description:%@ thumbnail:%@",
+        NSLog(@"id:%@ title:%@ description:%@ provider:%@ default:%@ name:%@ thumbnail:%@",
               theStream.streamId,
               theStream.title,
+              theStream.description,
               theStream.providerType,
               theStream.defaultCommunityId,
               theStream.community.name,
-              theStream.community.description,
               [theStream.community.thumbnailURL absoluteString]
               );
          */
