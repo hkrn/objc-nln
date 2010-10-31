@@ -41,6 +41,7 @@
                   delegate:(id)aDelegate
          didFinishSelector:(SEL)aSelector;
 
-- (void)stream:(NSStream *)stream handleEvent:(NSStreamEvent)eventCode;
+- (void)open;
+- (void)close;
 
 @end

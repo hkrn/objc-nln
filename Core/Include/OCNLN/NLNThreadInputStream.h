@@ -44,6 +44,7 @@
         didFinishSelector:(SEL)aSelector
              streamFilter:(SEL)aFilter;
 
-- (void)stream:(NSStream *)stream handleEvent:(NSStreamEvent)eventCode;
+- (void)open;
+- (void)close;
 
 @end

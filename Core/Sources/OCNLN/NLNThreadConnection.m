@@ -70,6 +70,8 @@
                                                         threadId:server.threadId
                                                         delegate:delegate
                                                didFinishSelector:selector];
+    [input open];
+    [output open];
 }
 
 @end

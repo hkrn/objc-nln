@@ -46,18 +46,28 @@
         isChat = NO;
         input = [aStream retain];
         [input setDelegate:self];
-        [input scheduleInRunLoop:[NSRunLoop currentRunLoop] forMode:NSDefaultRunLoopMode];
-        [input open];
     }
     return self;
 }
 
 - (void)dealloc
 {
-    [input close];
+    [self close];
     [input release];
     input = nil;
     [super dealloc];
+}
+
+- (void)open
+{
+    [input scheduleInRunLoop:[NSRunLoop currentRunLoop] forMode:NSDefaultRunLoopMode];
+    [input open];
+}
+
+- (void)close
+{
+    [input removeFromRunLoop:[NSRunLoop currentRunLoop] forMode:NSDefaultRunLoopMode];
+    [input close];
 }
 
 - (void)stream:(NSStream *)stream handleEvent:(NSStreamEvent)eventCode
@@ -97,6 +107,7 @@
             break;
         case NSStreamEventErrorOccurred: {
             [delegate performSelector:selector withObject:nil withObject:[stream streamError]];
+            [self close];
         }
             break;
     }

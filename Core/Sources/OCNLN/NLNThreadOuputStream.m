@@ -42,20 +42,30 @@
         threadId = [[NSString alloc] initWithString:aThreadId];
         output = [aStream retain];
         [output setDelegate:self];
-        [output scheduleInRunLoop:[NSRunLoop currentRunLoop] forMode:NSDefaultRunLoopMode];
-        [output open];
     }
     return self;
 }
 
 - (void)dealloc
 {
-    [output close];
+    [self close];
     [output release];
     [threadId release];
     output = nil;
     threadId = nil;
     [super dealloc];
+}
+
+- (void)open
+{
+    [output scheduleInRunLoop:[NSRunLoop currentRunLoop] forMode:NSDefaultRunLoopMode];
+    [output open];
+}
+
+- (void)close
+{
+    [output removeFromRunLoop:[NSRunLoop currentRunLoop] forMode:NSDefaultRunLoopMode];
+    [output close];
 }
 
 - (void)stream:(NSStream *)stream handleEvent:(NSStreamEvent)eventCode
@@ -72,11 +82,14 @@
                     }
                 }
                 isWritten = YES;
+                [self close];
             }
         }
             break;
         case NSStreamEventErrorOccurred: {
-            [delegate performSelector:selector withObject:nil withObject:[stream streamError]];
+            if (!isWritten)
+                [delegate performSelector:selector withObject:nil withObject:[stream streamError]];
+            [self close];
         }
             break;
     }
