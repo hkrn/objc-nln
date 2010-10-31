@@ -29,12 +29,10 @@
 
 @interface NLNCommunity : NSObject {
     NSString *name;
-    NSString *description;
     NSURL *thumbnailURL;
 }
 
 @property(nonatomic, readonly) NSString *name;
-@property(nonatomic, readonly) NSString *description;
 @property(nonatomic, readonly) NSURL *thumbnailURL;
 
 @end

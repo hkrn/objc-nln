@@ -32,6 +32,7 @@
 @private
     NSString *streamId;
     NSString *title;
+    NSString *description;
     NSString *providerType;
     NSString *defaultCommunityId;
     NLNCommunity *community;
@@ -39,6 +40,7 @@
 
 @property(readonly, nonatomic) NSString *streamId;
 @property(readonly, nonatomic) NSString *title;
+@property(readonly, nonatomic) NSString *description;
 @property(readonly, nonatomic) NSString *providerType;
 @property(readonly, nonatomic) NSString *defaultCommunityId;
 @property(readonly, nonatomic) NLNCommunity *community;

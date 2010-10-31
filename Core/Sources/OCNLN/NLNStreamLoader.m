@@ -31,7 +31,6 @@
 @interface NLNCommunity (Private)
 
 - (void)setName:(NSString *)value;
-- (void)setDescription:(NSString *)value;
 - (void)setThumbnailURL:(NSString *)value;
 
 @end
@@ -41,11 +40,6 @@
 - (void)setName:(NSString *)value
 {
     name = [value retain];
-}
-
-- (void)setDescription:(NSString *)value
-{
-    description = [value retain];
 }
 
 - (void)setThumbnailURL:(NSString *)value
@@ -60,6 +54,7 @@
 
 - (void)setStreamId:(NSString *)value;
 - (void)setTitle:(NSString *)value;
+- (void)setDescription:(NSString *)value;
 - (void)setProviderType:(NSString *)value;
 - (void)setDefaultCommunityId:(NSString *)value;
 
@@ -75,6 +70,11 @@
 - (void)setTitle:(NSString *)value
 {
     title = [value retain];
+}
+
+- (void)setDescription:(NSString *)value
+{
+    description = [value retain];
 }
 
 - (void)setProviderType:(NSString *)value
@@ -93,12 +93,14 @@
 
 struct NLNStreamXMLParserState {
     BOOL isError;
+    BOOL isStreamInfoTag;
+    BOOL isCommunityInfoTag;
     BOOL requestIdState;
-    BOOL titleState;
+    BOOL streamTitleState;
+    BOOL streamDescriptionState;
     BOOL providerTypeState;
     BOOL defaultCommunityState;
     BOOL communityNameState;
-    BOOL communityDescriptionState;
     BOOL communityThumbnailState;
     BOOL codeState;
     BOOL descriptionState;
@@ -108,18 +110,22 @@ static void toggleXMLParserState(NLNStreamXMLParserState *state, NSString *eleme
 {
     if ([element isEqualToString:@"request_id"])
         state->requestIdState = value;
-    else if ([element isEqualToString:@"title"])
-        state->titleState = value;
-    else if ([element isEqualToString:@"provider_type"])
+    else if ([element isEqualToString:@"streaminfo"])
+        state->isStreamInfoTag = value;
+    else if ([element isEqualToString:@"communityinfo"])
+        state->isCommunityInfoTag = value;
+    else if (state->isStreamInfoTag && [element isEqualToString:@"title"])
+        state->streamTitleState = value;
+    else if (state->isStreamInfoTag && [element isEqualToString:@"description"])
+        state->streamDescriptionState = value;
+    else if (state->isStreamInfoTag && [element isEqualToString:@"provider_type"])
         state->providerTypeState = value;
-    else if ([element isEqualToString:@"default_community"])
+    else if (state->isStreamInfoTag && [element isEqualToString:@"default_community"])
         state->defaultCommunityState = value;
-    else if ([element isEqualToString:@"name"])
+    else if (state->isCommunityInfoTag && [element isEqualToString:@"name"])
         state->communityNameState = value;
-    else if ([element isEqualToString:@"thumbnail"])
+    else if (state->isCommunityInfoTag && [element isEqualToString:@"thumbnail"])
         state->communityThumbnailState = value;
-    else if (!state->isError && [element isEqualToString:@"description"])
-        state->communityDescriptionState = value;
     else if (state->isError && [element isEqualToString:@"code"])
         state->codeState = value;
     else if (state->isError && [element isEqualToString:@"description"])
@@ -187,8 +193,11 @@ static void toggleXMLParserState(NLNStreamXMLParserState *state, NSString *eleme
 - (void)parser:(NSXMLParser *)parser foundCharacters:(NSString *)string
 {
     NLNStream *stream = (NLNStream *)entity;
-    if (state->titleState) {
+    if (state->streamTitleState) {
         [stream setTitle:string];
+    }
+    else if (state->streamDescriptionState) {
+        [stream setDescription:string];
     }
     else if (state->providerTypeState) {
         [stream setProviderType:string];
@@ -198,9 +207,6 @@ static void toggleXMLParserState(NLNStreamXMLParserState *state, NSString *eleme
     }
     else if (state->communityNameState) {
         [stream.community setName:string];
-    }
-    else if (state->communityDescriptionState) {
-        [stream.community setDescription:string];
     }
     else if (state->communityThumbnailState) {
         [stream.community setThumbnailURL:string];

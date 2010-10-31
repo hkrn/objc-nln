@@ -31,6 +31,7 @@
 
 @synthesize streamId;
 @synthesize title;
+@synthesize description;
 @synthesize providerType;
 @synthesize defaultCommunityId;
 @synthesize community;
@@ -42,6 +43,7 @@
         community = [[NLNCommunity alloc] init];
         streamId = nil;
         title = nil;
+        description = nil;
         providerType = nil;
         defaultCommunityId = nil;
     }
@@ -53,11 +55,13 @@
     [community release];
     [streamId release];
     [title release];
+    [description release];
     [providerType release];
     [defaultCommunityId release];
     community = nil;
     streamId = nil;
     title = nil;
+    description = nil;
     providerType = nil;
     defaultCommunityId = nil;
     [super dealloc];

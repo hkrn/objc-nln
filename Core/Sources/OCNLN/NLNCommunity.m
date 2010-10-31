@@ -30,7 +30,6 @@
 @implementation NLNCommunity
 
 @synthesize name;
-@synthesize description;
 @synthesize thumbnailURL;
 
 - (id)init
@@ -38,7 +37,6 @@
     self = [super init];
     if (self != nil) {
         name = nil;
-        description = nil;
         thumbnailURL = nil;
     }
     return self;
@@ -47,10 +45,8 @@
 - (void)dealloc
 {
     [name release];
-    [description release];
     [thumbnailURL release];
     name = nil;
-    description = nil;
     thumbnailURL = nil;
     [super dealloc];
 }
