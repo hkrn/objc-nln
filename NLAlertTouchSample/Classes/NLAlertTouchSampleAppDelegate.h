@@ -11,6 +11,7 @@
 @interface NLAlertTouchSampleAppDelegate : NSObject <UIApplicationDelegate> {
     UIWindow *window;
     UINavigationController *navigationController;
+    UIBackgroundTaskIdentifier backgroundTaskID;
 }
 
 @property (nonatomic, retain) IBOutlet UIWindow *window;

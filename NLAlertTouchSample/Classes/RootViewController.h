@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import <OCNLN/OCNLN.h>
 
-@interface RootViewController : UITableViewController<UIAlertViewDelegate> {
+@interface RootViewController : UITableViewController {
 @private
     NLNAuthentication *authentication;
     NLNUserLoader *userLoader;

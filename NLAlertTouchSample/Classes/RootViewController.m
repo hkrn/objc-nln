@@ -18,66 +18,74 @@
     [UIApplication sharedApplication].networkActivityIndicatorVisible = value;
 }
 
-- (void)viewDidLoad {
-    if (authentication == nil)
-        authentication = [[NLNAuthentication alloc] init];
-    if (userLoader == nil)
-        userLoader = [[NLNUserLoader alloc] init];
-    if (threadConnection == nil)
-        threadConnection = [[NLNThreadConnection alloc] init];
+- (void)startLoading
+{
     if (streams == nil)
         streams = [[NSMutableArray alloc] init];
+    if (threadConnection == nil)
+        threadConnection = [[NLNThreadConnection alloc] init];
+    if (authentication == nil) {
+        authentication = [[NLNAuthentication alloc] init];
+        // [authentication authenticateWithEmail:@"test@examle.com" password:@"password" delegate:self didFinishSelector:@selector(ticket:error:)];
+        // [self toggleNetworkActivity:YES];
+    }
+    if (userLoader == nil) {
+        userLoader = [[NLNUserLoader alloc] init];
+        [userLoader loadUserWithDelegate:self didFinishSelector:@selector(user:error:)];
+        [self toggleNetworkActivity:YES];
+    }
     lastModified = [[NSDate date] timeIntervalSince1970];
-    [userLoader loadUserWithDelegate:self didFinishSelector:@selector(user:error:)];
-    //[authentication authenticateWithEmail:@"test@examle.com" password:@"password" delegate:self didFinishSelector:@selector(ticket:error:)];
-    [self toggleNetworkActivity:YES];
+}
+
+- (void)viewDidLoad
+{
+    [self startLoading];
     [super viewDidLoad];
 }
 
-/*
-- (void)viewWillAppear:(BOOL)animated {
+- (void)viewWillAppear:(BOOL)animated
+{
+    UITableView *tv = self.tableView;
+    NSIndexPath *selected = [tv indexPathForSelectedRow];
+    [tv deselectRowAtIndexPath:selected animated:NO];
     [super viewWillAppear:animated];
 }
-*/
-/*
-- (void)viewDidAppear:(BOOL)animated {
+
+- (void)viewDidAppear:(BOOL)animated
+{
     [super viewDidAppear:animated];
 }
-*/
-/*
-- (void)viewWillDisappear:(BOOL)animated {
+
+- (void)viewWillDisappear:(BOOL)animated
+{
 	[super viewWillDisappear:animated];
 }
-*/
-/*
-- (void)viewDidDisappear:(BOOL)animated {
+
+- (void)viewDidDisappear:(BOOL)animated
+{
 	[super viewDidDisappear:animated];
 }
-*/
 
-/*
- // Override to allow orientations other than the default portrait orientation.
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
-	// Return YES for supported orientations.
+- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
+{
 	return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
- */
 
 #pragma mark -
 #pragma mark Table view data source
 
-// Customize the number of sections in the table view.
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
     return 1;
 }
 
-// Customize the number of rows in the table view.
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
     return [streams count];
 }
 
-// Customize the appearance of table view cells.
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
     static NSString *CellIdentifier = @"Cell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
@@ -105,7 +113,8 @@
 #pragma mark -
 #pragma mark Table view delegate
 
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
     UIApplication *app = [UIApplication sharedApplication];
     NLNStream *stream = [streams objectAtIndex:indexPath.row];
     NSString *url = [[NSString alloc] initWithFormat:@"nicolive://%@", stream.streamId];
@@ -140,6 +149,7 @@
                                               otherButtonTitles:nil];
         [alert show];
         [alert release];
+        [self toggleNetworkActivity:NO];
     }
     else {
         NSLog(@"ticket:%@", aTicket);
@@ -159,7 +169,8 @@
         [alert show];
         [alert release];
     }
-    else {
+    else if (theUser != nil) {
+        /*
         NSLog(@"id:%d hash:%@ name:%@ prefecture:%d age:%d sex:%@ premium:%d",
               theUser.userId,
               theUser.hash,
@@ -169,13 +180,14 @@
               theUser.sex,
               theUser.isPremium
               );
+         */
         user = [theUser retain];
         [threadConnection connectMessageServer:user.server
                                       delegate:self
                              didFinishSelector:@selector(stream:error:)
                                   streamFilter:@selector(filterStream:community:)];
-        [self toggleNetworkActivity:NO];
     }
+    [self toggleNetworkActivity:NO];
 }
 
 - (void)stream:(NLNStream *)theStream error:(NSError *)error
@@ -210,7 +222,7 @@
 - (id)filterStream:(NSString *)streamID community:(NSString *)communityID
 {
     NSTimeInterval current = [[NSDate date] timeIntervalSince1970];
-    [user isMemberOfCommunityWithId:communityID];
+    // [user isMemberOfCommunityWithId:communityID];
     if (current - lastModified >= 2) {
         lastModified = current;
         [self toggleNetworkActivity:YES];
@@ -222,7 +234,8 @@
 #pragma mark -
 #pragma mark Memory management
 
-- (void)didReceiveMemoryWarning {
+- (void)didReceiveMemoryWarning
+{
     NSUInteger count = [streams count];
     NSUInteger threshold = 15;
     if (count > threshold) {
@@ -233,10 +246,12 @@
     [super didReceiveMemoryWarning];
 }
 
-- (void)viewDidUnload {
+- (void)viewDidUnload
+{
 }
 
-- (void)dealloc {
+- (void)dealloc
+{
     [authentication release];
     [userLoader release];
     [threadConnection release];

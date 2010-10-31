@@ -17,11 +17,23 @@
 #pragma mark -
 #pragma mark Application lifecycle
 
-- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {    
+- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
+{
     return YES;
 }
 
-- (void)applicationWillTerminate:(UIApplication *)application {
+- (void)applicationWillTerminate:(UIApplication *)application
+{
+}
+
+- (void)applicationDidEnterBackground:(UIApplication *)application
+{
+    UIDevice *device = [UIDevice currentDevice];
+    if ([device respondsToSelector:@selector(isMultitaskingSupported)]) {
+        backgroundTaskID = [application beginBackgroundTaskWithExpirationHandler:^{
+            [application endBackgroundTask:backgroundTaskID];
+        }];
+    }
 }
 
 #pragma mark -
